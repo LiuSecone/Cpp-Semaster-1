@@ -1,3 +1,10 @@
+/*
+Gread Two Semaster One Small Semaster
+Test 1 Problem 1
+Verson:1.0
+Date:2017.9.11
+Copyright:Liu Secone
+*/
 #include <iostream>
 #include <random>
 #include <ctime>
@@ -5,12 +12,14 @@
 using namespace std;
 
 int main() {
+	// use C++11 random engine to creat random number
 	uniform_int_distribution<int> u(1,1000);
 	default_random_engine e(time(0));
 	e();
 	const int price = u(e);
 	int guess = 0;
 	cout << price << endl << guess << endl;
+	//guess the number
 	while (guess != price) {
 		cin.clear();
 		cin.sync();

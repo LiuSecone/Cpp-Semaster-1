@@ -1,3 +1,10 @@
+/*
+Gread Two Semaster One Small Semaster
+Test 1 Problem 7
+Verson:1.0
+Date:2017.9.11
+Copyright:Liu Secone
+*/
 #include <iostream>
 
 using namespace std;
