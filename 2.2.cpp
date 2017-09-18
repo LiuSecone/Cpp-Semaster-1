@@ -14,10 +14,13 @@ class Point {
 private:
 	double m_x = 0, m_y = 0;
 public:
+	//initialization function
 	void init(double x = 0, double y = 0);
 	void init(Point Poi);
+	//return x and y of the point
 	double getx();
 	double gety();
+	//caculate the distance
 	double getdist(double x, double y);
 	double getdist(Point Poi);
 };
@@ -57,12 +60,15 @@ private:
 	Point m_o;
 	double m_rad;
 public:
+	//initializiton function
 	void init(Circle Cir);
 	void init(Point o, double r);
 	void init(double x, double y, double r);
+	//return x y and r of the circle
 	double getx(Circle Cir);
 	double gety(Circle Cir);
 	double getr(Circle Cir);
+	//judge two circle is cross or not, return 1 or 0
 	int judgecross(Circle Cir);
 	int judgecross(double x, double y, double r);
 };
@@ -110,6 +116,7 @@ int Circle::judgecross(Circle Cir) {
 }
 
 int main() {
+	//set and read two circle
 	Circle c1, c2;
 	cout << "Please input the x y and r of circle 1:" << endl;
 	int x, y, r;
@@ -118,6 +125,7 @@ int main() {
 	cout << "Please input the x y and r of circle 1:" << endl;
 	cin >> x >> y >> r;
 	c2.init(x, y, r);
+	//judge and print the result
 	if (c1.judgecross(c2)) {
 		cout << "Cross" << endl;
 	} else {

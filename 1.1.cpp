@@ -16,6 +16,7 @@ int main() {
 	uniform_int_distribution<int> u(1,1000);
 	default_random_engine e(time(0));
 	e();
+	//creat the random price
 	const int price = u(e);
 	int guess = 0;
 	cout << price << endl << guess << endl;

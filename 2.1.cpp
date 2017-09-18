@@ -15,16 +15,20 @@ class Point {
 private:
 	double m_x = 0, m_y = 0;
 public:
+	//constructor function and the x y was set as 0 defaultly
 	Point (double x = 0, double y = 0) {
 		m_x = x;
 		m_y = y;
-		//system("pause");
+		system("pause");
 		return;
 	}
+	//initialization function
 	void init(Point Poi);
 	void init(double x, double y);
+	//return x and y of the point
 	double getx();
 	double gety();
+	//return the distance
 	double getdist(double x, double y);
 	double getdist(Point Poi);
 };
@@ -97,11 +101,13 @@ int main() {
 	cin >> x1 >> y1;
 	cout << "Please input point2 x and y:" << endl;
 	cin >> x2 >> y2;
+	//check the legitimacy of the input
 	if (x1 >= x2 && y1 >= y2) {
 		double temp;
 		temp = x1; x1 = x2; x2 = temp;
 		temp = y1; y1 = y2; y2 = temp;
 	}
+	//initialize and caculate the area
 	qsua.init(x1, y1, x2, y2);
 	cout << qsua.getarea() << endl;
 	return 0;

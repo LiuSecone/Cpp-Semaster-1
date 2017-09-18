@@ -9,14 +9,18 @@ Copyright:Liu Secone
 
 using namespace std;
 
+//per declare
 class Car;
 
 class Boat {
+	//friend function
 	friend double TotalWeight(const Boat& b, const Car& c);
 private:
 	double m_weight;
 public:
+	//read the weight
 	void init(double weight);
+	//return the weight
 	double getweight();
 };
 
@@ -30,11 +34,14 @@ double Boat::getweight() {
 }
 
 class Car {
+	//friend function
 	friend double TotalWeight(const Boat& b, const Car& c);
 private:
 	double m_weight;
 public:
+	//read the weight
 	void init(double weight);
+	//return the weight
 	double getweight();
 };
 
@@ -55,11 +62,13 @@ int main() {
 	Boat b;
 	Car c;
 	int temp;
+	//read the weight of the boat and car
 	cout << "Please input the weight of the boat and the car:" << endl;
 	cin >> temp;
 	b.init(temp);
 	cin >> temp;
 	c.init(temp);
+	//use TotalWeight to caculate the answer and put it on the screen
 	cout << TotalWeight(b, c) << endl;
 	return 0;
 }
