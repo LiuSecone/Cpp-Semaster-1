@@ -17,14 +17,16 @@ private:
 	int *m_pm;
 public:
 	//default constructor function
+	/*
 	Matrix() {
 		m_lines = 0;
 		m_rows = 0;
 		m_pm = NULL;
 		return;
 	}
+	*/
 	//constructor function
-	Matrix(int lines, int rows) {
+	Matrix(int lines = 0, int rows = 0) {
 		m_lines = lines;
 		m_rows = rows;
 		m_pm = new int[lines * rows];
@@ -99,6 +101,7 @@ Matrix Matrix::addMatrix(const Matrix &A2) {
 		return temp;
 	} else {
 		//if the operation is illegal, then return the empty matrix
+		cout << "Can't add." << endl;
 		Matrix temp(0, 0);
 		return temp;
 	}
@@ -112,6 +115,7 @@ Matrix Matrix::minusMatrix(const Matrix &A2) {
 		}
 		return temp;
 	} else {
+		cout << "Can't minus." << endl;
 		Matrix temp(0, 0);
 		return temp;
 	}
@@ -133,13 +137,18 @@ Matrix& Matrix::operator=(const Matrix &m) {
 
 int main() {
 	//set and read
-	Matrix A1(4, 5);
-	Matrix A2(4, 5);
-	Matrix A3(4, 5);
+	int x, y;
+	cout << "Please input the Matrix 1 lines and rows:" << endl;
+	cin >> x >> y;
+	Matrix A1(x, y);
 	cout << "Please input the Matrix 1:" << endl;
 	A1.getMatrix();
+	cout << "Please input the Matrix 2 lines and rows:" << endl;
+	cin >> x >> y;
+	Matrix A2(x, y);
 	cout << "Please input the Matrix 2:" << endl;
 	A2.getMatrix();
+	Matrix A3;
 	//plus and print
 	A3 = A1.addMatrix(A2);
 	A3.printMatrix();
