@@ -139,7 +139,7 @@ void judgeChoose(const int &sta) {
 		cout << "Please input the name: " << endl;
 		getline(cin, name);
 		num = pb.find(name);
-		if (num == "") {
+		if (num.empty()) {
 			cout << "The name \"" << name << "\" dose not exist." << endl;
 		} else {
 			cout << "The phone number of \"" << name
